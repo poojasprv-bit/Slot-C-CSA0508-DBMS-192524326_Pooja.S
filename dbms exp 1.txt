@@ -1,0 +1,464 @@
+experiment 2
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| csa0508            |
+| employee           |
+| exp1               |
+| guest              |
+| income             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| reservation        |
+| room               |
+| roomtype           |
+| std                |
+| stu                |
+| student            |
+| sys                |
++--------------------+
+15 rows in set (0.01 sec)
+
+mysql> use exp1;
+Database changed
+mysql> desc employee;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| E_no      | int          | YES  |     | NULL    |       |
+| E_name    | varchar(30)  | YES  |     | NULL    |       |
+| E_address | varchar(100) | YES  |     | NULL    |       |
+| E_ph_no   | int          | YES  |     | NULL    |       |
+| Dept_no   | int          | YES  |     | NULL    |       |
+| Dept_name | varchar(50)  | YES  |     | NULL    |       |
+| job_id    | varchar(20)  | YES  |     | NULL    |       |
+| salary    | decimal(8,0) | YES  |     | NULL    |       |
+| hiredate  | date         | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+9 rows in set (0.02 sec)
+
+mysql>
+mysql> insert into employee values
+    -> (01,'pooja','bangarpet','6577567567',23,'sales','s001',30000.00),
+    -> (02,'rekha','malur','345678678',24,'mech','m002',40000.00),
+    -> (03,'prajuu','kolar','345678987',25,'cse','c003',50000.00),
+    -> (04,'muruga','bangalore','987654376',26,'sales','s004',60000.00),
+    -> (05,'amra','itgate','5467987544',27,'sales','s005',70000.00);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+    -> mysql> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases' at line 1
+mysql> +--------------------+
+    -> | Database           |
+    -> +--------------------+
+    -> | csa0508            |
+    -> | employee           |
+    -> | exp1               |
+    -> | guest              |
+    -> | income             |
+    -> | information_schema |
+    -> | mysql              |
+    -> | performance_schema |
+    -> | reservation        |
+    -> | room               |
+    -> | roomtype           |
+    -> | std                |
+    -> | stu                |
+    -> | student            |
+    -> | sys                |
+    -> +--------------------+
+    -> 15 rows in set (0.00 sec)
+    ->
+    -> mysql> use database exp1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+
+| Database           |
++--------------------+
+| csa0508  ' at line 1
+mysql> ERROR 1049 (42000): Unknown database 'database'
+    -> mysql> use exp1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1049 (42000): Unknown database 'database'
+mysql> use exp1' at line 1
+mysql> Database changed
+    -> mysql> create table employee (EMP_no int(10),E_name varchar(30),E_address varchar(100),E_ph_no int(20),Dept_no int(10),Dept_name varchar(50),job_id varchar(5),salary decimal(8));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Database changed
+mysql> create table employee (EMP_no int(10),E_name varchar(30)' at line 1
+mysql> Query OK, 0 rows affected, 3 warnings (0.04 sec)
+    ->
+    -> mysql> desc employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected, 3 warnings (0.04 sec)
+
+mysql> desc employee' at line 1
+mysql> +-----------+--------------+------+-----+---------+-------+
+    -> | Field     | Type         | Null | Key | Default | Extra |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> | EMP_no    | int          | YES  |     | NULL    |       |
+    -> | E_name    | varchar(30)  | YES  |     | NULL    |       |
+    -> | E_address | varchar(100) | YES  |     | NULL    |       |
+    -> | E_ph_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_name | varchar(50)  | YES  |     | NULL    |       |
+    -> | job_id    | varchar(5)   | YES  |     | NULL    |       |
+    -> | salary    | decimal(8,0) | YES  |     | NULL    |       |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> 8 rows in set (0.02 sec)
+    ->
+    -> mysql> alter table employee add hiredate date;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+-----------+--------------+------+-----+---------+-------+
+| Field     | Type  ' at line 1
+mysql> Query OK, 0 rows affected (0.05 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +-----------+--------------+------+-----+---------+-------+
+    -> | Field     | Type         | Null | Key | Default | Extra |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> | EMP_no    | int          | YES  |     | NULL    |       |
+    -> | E_name    | varchar(30)  | YES  |     | NULL    |       |
+    -> | E_address | varchar(100) | YES  |     | NULL    |       |
+    -> | E_ph_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_name | varchar(50)  | YES  |     | NULL    |       |
+    -> | job_id    | varchar(5)   | YES  |     | NULL    |       |
+    -> | salary    | decimal(8,0) | YES  |     | NULL    |       |
+    -> | hiredate  | date         | YES  |     | NULL    |       |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> 9 rows in set (0.00 sec)
+    ->
+    -> mysql> alter table employee
+    ->     -> modify job_id char(5);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+-----------+--------------+------+-----+---------+-------+
+| Field     | Type  ' at line 1
+mysql> Query OK, 0 rows affected (0.09 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +-----------+--------------+------+-----+---------+-------+
+    -> | Field     | Type         | Null | Key | Default | Extra |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> | EMP_no    | int          | YES  |     | NULL    |       |
+    -> | E_name    | varchar(30)  | YES  |     | NULL    |       |
+    -> | E_address | varchar(100) | YES  |     | NULL    |       |
+    -> | E_ph_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_name | varchar(50)  | YES  |     | NULL    |       |
+    -> | job_id    | char(5)      | YES  |     | NULL    |       |
+    -> | salary    | decimal(8,0) | YES  |     | NULL    |       |
+    -> | hiredate  | date         | YES  |     | NULL    |       |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> 9 rows in set (0.00 sec)
+    ->
+    -> mysql> alter table employee
+    ->     -> rename column EMP_no to E_no;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+-----------+--------------+------+-----+---------+-------+
+| Field     | Type  ' at line 1
+mysql> Query OK, 0 rows affected (0.03 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +-----------+--------------+------+-----+---------+-------+
+    -> | Field     | Type         | Null | Key | Default | Extra |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> | E_no      | int          | YES  |     | NULL    |       |
+    -> | E_name    | varchar(30)  | YES  |     | NULL    |       |
+    -> | E_address | varchar(100) | YES  |     | NULL    |       |
+    -> | E_ph_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_name | varchar(50)  | YES  |     | NULL    |       |
+    -> | job_id    | char(5)      | YES  |     | NULL    |       |
+    -> | salary    | decimal(8,0) | YES  |     | NULL    |       |
+    -> | hiredate  | date         | YES  |     | NULL    |       |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> 9 rows in set (0.01 sec)
+    ->
+    -> mysql> alter table employee
+    ->     -> modify job_id varchar(5);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+-----------+--------------+------+-----+---------+-------+
+| Field     | Type  ' at line 1
+mysql> Query OK, 0 rows affected (0.14 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.14 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +-----------+--------------+------+-----+---------+-------+
+    -> | Field     | Type         | Null | Key | Default | Extra |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> | E_no      | int          | YES  |     | NULL    |       |
+    -> | E_name    | varchar(30)  | YES  |     | NULL    |       |
+    -> | E_address | varchar(100) | YES  |     | NULL    |       |
+    -> | E_ph_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_name | varchar(50)  | YES  |     | NULL    |       |
+    -> | job_id    | varchar(5)   | YES  |     | NULL    |       |
+    -> | salary    | decimal(8,0) | YES  |     | NULL    |       |
+    -> | hiredate  | date         | YES  |     | NULL    |       |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> 9 rows in set (0.00 sec)
+    ->
+    -> mysql> alter table employee
+    ->     -> modify job_id varchar(20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+-----------+--------------+------+-----+---------+-------+
+| Field     | Type  ' at line 1
+mysql> Query OK, 0 rows affected (0.02 sec)
+    -> Records: 0  Duplicates: 0  Warnings: 0
+    ->
+    -> mysql> desc employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mys' at line 1
+mysql> +-----------+--------------+------+-----+---------+-------+
+    -> | Field     | Type         | Null | Key | Default | Extra |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> | E_no      | int          | YES  |     | NULL    |       |
+    -> | E_name    | varchar(30)  | YES  |     | NULL    |       |
+    -> | E_address | varchar(100) | YES  |     | NULL    |       |
+    -> | E_ph_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_no   | int          | YES  |     | NULL    |       |
+    -> | Dept_name | varchar(50)  | YES  |     | NULL    |       |
+    -> | job_id    | varchar(20)  | YES  |     | NULL    |       |
+    -> | salary    | decimal(8,0) | YES  |     | NULL    |       |
+    -> | hiredate  | date         | YES  |     | NULL    |       |
+    -> +-----------+--------------+------+-----+---------+-------+
+    -> 9 rows in set (0.00 sec)
+    ->
+    -> mysql>
+    -> ^C
+mysql> ^C
+mysql>  insert into employee values
+    ->  (01,'pooja','bangarpet','6577567567',23,'sales','s001',30000.00,'2007-5-24'),
+    ->  (02,'rekha','malur','345678678',24,'mech','m002',40000.00,'2005-6-23'),
+    ->  (03,'prajuu','kolar','345678987',25,'cse','c003',50000.00,'2006-8-25'),
+    -> (04,'muruga','bangalore','987654376',26,'sales','s004',60000.00,'2008-6-26'),
+    ->  (05,'amra','itgate','5467987544',27,'sales','s005',70000.00,'2652-67-23');
+ERROR 1264 (22003): Out of range value for column 'E_ph_no' at row 1
+mysql> insert into employee values
+    ->     ->  (01,'pooja','bangarpet','6577567567',23,'sales','s001',30000.00,'2007-5-24'),
+    ->     ->  (02,'rekha','malur','345678678',24,'mech','m002',40000.00,'2005-6-23'),
+    ->     ->  (03,'prajuu','kolar','345678987',25,'cse','c003',50000.00,'2006-8-25'),
+    ->     -> (04,'muruga','bangalore','987654376',26,'sales','s004',60000.00,'2008-6-26'),
+    ->     ->  (05,'amra','itgate','44',27,'sales','s005',70000.00,'2652-67-23');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->  (01,'pooja','bangarpet','6577567567',23,'sales','s001',30000.00,'2007-5-24')' at line 2
+mysql> insert into employee values
+    -> (01,'pooja','bangarpet','65',23,'sales','s001',30000.00,'2007-5-24'),
+    ->  (02,'rekha','malur','34',24,'mech','m002',40000.00,'2005-6-23'),
+    ->  (03,'prajuu','kolar','35',25,'cse','c003',50000.00,'2006-8-25'),
+    -> (04,'muruga','bangalore','55',26,'sales','s004',60000.00,'2008-6-26'),
+    ->  (05,'amra','itgate','52',27,'sales','s005',70000.00,'2652-67-23');
+ERROR 1292 (22007): Incorrect date value: '2652-67-23' for column 'hiredate' at row 5
+mysql>  insert into employee values
+    ->     -> (01,'pooja','bangarpet','65',23,'sales','s001',30000.00,'2007-5-24'),
+    ->     ->  (02,'rekha','malur','34',24,'mech','m002',40000.00,'2005-6-23'),
+    ->     ->  (03,'prajuu','kolar','35',25,'cse','c003',50000.00,'2006-8-25'),
+    ->     -> (04,'muruga','bangalore','55',26,'sales','s004',60000.00,'2008-6-26'),
+    ->     ->  (05,'amra','itgate','52',27,'sales','s005',70000.00,'2003-7-23');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> (01,'pooja','bangarpet','65',23,'sales','s001',30000.00,'2007-5-24'),
+    -> ' at line 2
+mysql> insert into employee values
+    -> (01,'pooja','bangarpet','65',23,'sales','s001',30000.00,'2007-5-24'),
+    -> (02,'rekha','malur','34',24,'mech','m002',40000.00,'2005-6-23'),
+    -> (03,'prajuu','kolar','35',25,'cse','c003',50000.00,'2006-8-25'),
+    -> (04,'muruga','bangalore','55',26,'sales','s004',60000.00,'2008-6-26'),
+    -> (05,'amra','itgate','52',27,'sales','s005',70000.00,'2003-7-23');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+|    1 | pooja  | bangarpet |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 |
+|    2 | rekha  | malur     |      34 |      24 | mech      | m002   |  40000 | 2005-06-23 |
+|    3 | prajuu | kolar     |      35 |      25 | cse       | c003   |  50000 | 2006-08-25 |
+|    4 | muruga | bangalore |      55 |      26 | sales     | s004   |  60000 | 2008-06-26 |
+|    5 | amra   | itgate    |      52 |      27 | sales     | s005   |  70000 | 2003-07-23 |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from employee where dept_no = 1;
+Empty set (0.00 sec)
+
+mysql> select * from employee where dept_no = 23;
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+|    1 | pooja  | bangarpet |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+1 row in set (0.01 sec)
+
+mysql> update employee set E_address = 'bangarpet' where E_no = 65;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from employee;
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+|    1 | pooja  | bangarpet |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 |
+|    2 | rekha  | malur     |      34 |      24 | mech      | m002   |  40000 | 2005-06-23 |
+|    3 | prajuu | kolar     |      35 |      25 | cse       | c003   |  50000 | 2006-08-25 |
+|    4 | muruga | bangalore |      55 |      26 | sales     | s004   |  60000 | 2008-06-26 |
+|    5 | amra   | itgate    |      52 |      27 | sales     | s005   |  70000 | 2003-07-23 |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+5 rows in set (0.00 sec)
+
+mysql>  update employee set E_address = 'delhi' where E_no = 65;
+Query OK, 0 rows affected (0.01 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from employee;
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+|    1 | pooja  | bangarpet |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 |
+|    2 | rekha  | malur     |      34 |      24 | mech      | m002   |  40000 | 2005-06-23 |
+|    3 | prajuu | kolar     |      35 |      25 | cse       | c003   |  50000 | 2006-08-25 |
+|    4 | muruga | bangalore |      55 |      26 | sales     | s004   |  60000 | 2008-06-26 |
+|    5 | amra   | itgate    |      52 |      27 | sales     | s005   |  70000 | 2003-07-23 |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+5 rows in set (0.00 sec)
+
+mysql> update employee set E_address = 'delhi' where E_no = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee;
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+|    1 | pooja  | delhi     |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 |
+|    2 | rekha  | malur     |      34 |      24 | mech      | m002   |  40000 | 2005-06-23 |
+|    3 | prajuu | kolar     |      35 |      25 | cse       | c003   |  50000 | 2006-08-25 |
+|    4 | muruga | bangalore |      55 |      26 | sales     | s004   |  60000 | 2008-06-26 |
+|    5 | amra   | itgate    |      52 |      27 | sales     | s005   |  70000 | 2003-07-23 |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+5 rows in set (0.00 sec)
+
+mysql>  select * from employee where dept_name = sales;
+ERROR 1054 (42S22): Unknown column 'sales' in 'where clause'
+mysql> select * from employee where dept_name = 'sales';
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+|    1 | pooja  | delhi     |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 |
+|    4 | muruga | bangalore |      55 |      26 | sales     | s004   |  60000 | 2008-06-26 |
+|    5 | amra   | itgate    |      52 |      27 | sales     | s005   |  70000 | 2003-07-23 |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> alter table add email_id varchar(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add email_id varchar(50)' at line 1
+mysql> desc employee;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| E_no      | int          | YES  |     | NULL    |       |
+| E_name    | varchar(30)  | YES  |     | NULL    |       |
+| E_address | varchar(100) | YES  |     | NULL    |       |
+| E_ph_no   | int          | YES  |     | NULL    |       |
+| Dept_no   | int          | YES  |     | NULL    |       |
+| Dept_name | varchar(50)  | YES  |     | NULL    |       |
+| job_id    | varchar(20)  | YES  |     | NULL    |       |
+| salary    | decimal(8,0) | YES  |     | NULL    |       |
+| hiredate  | date         | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+9 rows in set (0.02 sec)
+
+mysql> alter table employee add email_id varchar(50);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| E_no      | int          | YES  |     | NULL    |       |
+| E_name    | varchar(30)  | YES  |     | NULL    |       |
+| E_address | varchar(100) | YES  |     | NULL    |       |
+| E_ph_no   | int          | YES  |     | NULL    |       |
+| Dept_no   | int          | YES  |     | NULL    |       |
+| Dept_name | varchar(50)  | YES  |     | NULL    |       |
+| job_id    | varchar(20)  | YES  |     | NULL    |       |
+| salary    | decimal(8,0) | YES  |     | NULL    |       |
+| hiredate  | date         | YES  |     | NULL    |       |
+| email_id  | varchar(50)  | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+mysql> update employee set email_id = 'pooja@gmail.com' where E_no = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee set email_id = 'rekha@gmail.com' where E_no = 2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee set email_id = 'appu@gmail.com' where E_no = 3;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee set email_id = 'muruga@gmail.com' where E_no = 4;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee set email_id = 'amra@gmail.com' where E_no = 5;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee;
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   | email_id         |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+|    1 | pooja  | delhi     |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 | pooja@gmail.com  |
+|    2 | rekha  | malur     |      34 |      24 | mech      | m002   |  40000 | 2005-06-23 | rekha@gmail.com  |
+|    3 | prajuu | kolar     |      35 |      25 | cse       | c003   |  50000 | 2006-08-25 | appu@gmail.com   |
+|    4 | muruga | bangalore |      55 |      26 | sales     | s004   |  60000 | 2008-06-26 | muruga@gmail.com |
+|    5 | amra   | itgate    |      52 |      27 | sales     | s005   |  70000 | 2003-07-23 | amra@gmail.com   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+5 rows in set (0.00 sec)
+
+mysql> update employee set email_id = NULL where E_name = 'rekha';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee;
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   | email_id         |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+|    1 | pooja  | delhi     |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 | pooja@gmail.com  |
+|    2 | rekha  | malur     |      34 |      24 | mech      | m002   |  40000 | 2005-06-23 | NULL             |
+|    3 | prajuu | kolar     |      35 |      25 | cse       | c003   |  50000 | 2006-08-25 | appu@gmail.com   |
+|    4 | muruga | bangalore |      55 |      26 | sales     | s004   |  60000 | 2008-06-26 | muruga@gmail.com |
+|    5 | amra   | itgate    |      52 |      27 | sales     | s005   |  70000 | 2003-07-23 | amra@gmail.com   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from employee where dept_name = 'sales';
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+| E_no | E_name | E_address | E_ph_no | Dept_no | Dept_name | job_id | salary | hiredate   | email_id         |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+|    1 | pooja  | delhi     |      65 |      23 | sales     | s001   |  30000 | 2007-05-24 | pooja@gmail.com  |
+|    4 | muruga | bangalore |      55 |      26 | sales     | s004   |  60000 | 2008-06-26 | muruga@gmail.com |
+|    5 | amra   | itgate    |      52 |      27 | sales     | s005   |  70000 | 2003-07-23 | amra@gmail.com   |
++------+--------+-----------+---------+---------+-----------+--------+--------+------------+------------------+
+3 rows in set (0.00 sec)
+
+mysql>
